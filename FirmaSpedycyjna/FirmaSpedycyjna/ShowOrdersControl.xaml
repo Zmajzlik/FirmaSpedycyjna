@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid Name="OrdersGrid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="10,10,0,0"/>
-        <TextBox Name="DistBox" HorizontalAlignment="Left" Height="23" Margin="176,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Click="AddBtn_Click" Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid Name="Grid" HorizontalAlignment="Left" Height="380" Margin="45,60,0,0" VerticalAlignment="Top" Width="727"/>
 
     </Grid>
 </UserControl>

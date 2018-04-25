@@ -32,8 +32,7 @@ namespace FirmaSpedycyjna
         {
             InitializeComponent();
             Connect();
-            FillData();
-            
+            FillData();  
         }
         private void FillData()
         {
@@ -45,32 +44,27 @@ namespace FirmaSpedycyjna
         }
         private void GetDistance()
         {
-            OrdersGrid.Visibility = Visibility.Hidden;
             var ShipToAddress = "SELECT ShipAddress, ShipCity, ShipCountry from Orders";
             var ShipFromAddress = "SELECT ShippedFrom from [Order Details]";
-
             var locationServicesA = new GoogleLocationService();
             var locationServicesB = new GoogleLocationService();
-
             string pointA = ShipToAddress;
             string pointB = ShipFromAddress;
-            
             System.Device.Location.GeoCoordinate gc = new System.Device.Location.GeoCoordinate()
             {
-
             };
             System.Device.Location.GeoCoordinate gc2 = new System.Device.Location.GeoCoordinate()
             {
-
             };
             double distance = gc2.GetDistanceTo(gc);
-
-            DistBox.Text = distance.ToString();
         }
         private void Back()
         {
-            DistBox.Visibility = Visibility.Hidden;
-            OrdersGrid.Visibility = Visibility.Hidden;
+        }
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowOrdersCtrl addOrder = new ShowOrdersCtrl();
+            Grid.Children.Add(addOrder);
         }
     }
 }

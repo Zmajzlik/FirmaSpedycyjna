@@ -7,14 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="0,-4,0,4">
-        <TextBox Name="ShipCityBox" HorizontalAlignment="Left" Height="23" Margin="83,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ShipAddressBox" HorizontalAlignment="Left" Height="23" Margin="83,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name ="RequiredDateBox" HorizontalAlignment="Left" Height="23" Margin="83,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name ="FreighTypeBox" HorizontalAlignment="Left" Height="23" Margin="83,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ShipCountryBox" HorizontalAlignment="Left" Height="23" Margin="83,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ShippedFromBox" HorizontalAlignment="Left" Height="23" Margin="83,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="PriceBox" HorizontalAlignment="Left" Height="23" Margin="83,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name ="OrderDateBox" HorizontalAlignment="Left" Height="23" Margin="83,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name ="OrderDateBox" HorizontalAlignment="Left" Height="23" Margin="87,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Name ="RequiredDateBox" HorizontalAlignment="Left" Height="23" Margin="87,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DestinationBox" HorizontalAlignment="Left" Height="23" Margin="87,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ShippedFromBox" HorizontalAlignment="Left" Height="23" Margin="87,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ShippedDateBox" HorizontalAlignment="Left" Height="23" Margin="87,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name ="FreighBox" HorizontalAlignment="Left" Height="23" Margin="87,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="KmPriceBox" HorizontalAlignment="Left" Height="23" Margin="87,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DistanceBox" HorizontalAlignment="Left" Height="23" Margin="87,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="PriceBox" HorizontalAlignment="Left" Height="23" Margin="87,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="CustomerIDBox" HorizontalAlignment="Left" Height="23" Margin="87,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid Name="CustomersGrid" HorizontalAlignment="Left" Height="Auto" Margin="304,62,0,0" VerticalAlignment="Top" Width="Auto"/>
+        <Label Content="Order Date:" HorizontalAlignment="Left" Margin="3,62,0,0" VerticalAlignment="Top" Height="27" Width="84"/>
+        <Label Content="RequiredDate:" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Width="87" Height="23"/>
+        <Label Content="Shipped from:" HorizontalAlignment="Left" Margin="0,141,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label Content="Shipped date:" HorizontalAlignment="Left" Margin="-2,169,0,0" VerticalAlignment="Top" Width="87" Height="28"/>
+        <Label Content="Freight:" HorizontalAlignment="Left" Margin="0,199,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="Price per KM:" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top"/>
+        <Label Content="Destination:&#x9;" HorizontalAlignment="Left" Margin="0,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Distance:&#x9;" HorizontalAlignment="Left" Margin="0,255,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Total price:" HorizontalAlignment="Left" Margin="0,283,0,0" VerticalAlignment="Top"/>
+        <Label Content="CustomerID:" HorizontalAlignment="Left" Margin="0,311,0,0" VerticalAlignment="Top"/>
+        <Button Name="AddOrderBtn" Click="AddBtn_Click" Content="Add" HorizontalAlignment="Left" Margin="132,342,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="BackBtn_Click" Content="Back" HorizontalAlignment="Left" Margin="716,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Calendar SelectedDatesChanged="RequiredDate" Name="CalendarForOrderDate" HorizontalAlignment="Left" Margin="424,29,0,0" VerticalAlignment="Top"/>
+
+
+
 
     </Grid>
 </UserControl>

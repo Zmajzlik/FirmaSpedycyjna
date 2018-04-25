@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 namespace FirmaSpedycyjna
@@ -22,38 +23,101 @@ namespace FirmaSpedycyjna
     public partial class ShowOrdersCtrl : UserControl
     {
         string sqlConString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=spedycjaath;User ID=spedycjaath;Password=Qd6QQ~!3f4iN";
+        
         public ShowOrdersCtrl()
         {
             InitializeComponent();
+            InsertDataToGrid();
+        }
+        private void InsertDataToGrid()
+        {
+            SqlConnection sql = new SqlConnection(sqlConString);
+            //Inserting customers data to DataGrid
+            string showcust = "SELECT CONCAT('(',CustomerID,')',' ',CompanyName) as Customer from Customers";
+            try
+            {
+                sql.Open();
+                using (SqlCommand showing = new SqlCommand())
+                {
+                    SqlCommand show = new SqlCommand(showcust, sql);
+                    SqlDataAdapter sdr = new SqlDataAdapter(show);
+                    DataTable dt = new DataTable();
+                    sdr.Fill(dt);
+                    CustomersGrid.ItemsSource = dt.DefaultView;
+                    show.ExecuteNonQuery();  
+                }
+                //Close connection after inserting data
+                sql.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                sql.Close();
+            }
         }
         private void AddOrder()
         {
             SqlConnection sql = new SqlConnection(sqlConString);
-            using (SqlCommand addOrder = new SqlCommand())
+            String query = "INSERT INTO Orders (OrderID, OrderDate,RequiredDate, Destination, ShippedFrom, ShippedDate,CustomerID) VALUES (@OrderID,@CustomerID,@OrderDate,@RequiredDate,@Destination,@ShippedFrom,@ShippedDate,@CustomerID)";
+            try
             {
-                addOrder.Connection = sql;
-                addOrder.CommandType = System.Data.CommandType.Text;
-                addOrder.CommandText= "INSERT Orders.OrderID, @OrderDate, @RequiredDate, @ShippedDate, @FreightType, @FreightWeight, @ShipAddress, ShipCity, ShipCountry, ShippedFrom, Price from Orders join [Order Details] on orders.orderid =[order details].orderid"
-                addOrder.Parameters.AddWithValue(@OrderDate,OrderDateBox.Text);
+                sql.Open();
+                using (SqlCommand cmd = new SqlCommand(query,sql))
+                {
+                    //Generating number and get current date
+                    int number = 1;
+                    number += 1;
+                    DateTime orderDate = DateTime.Today;
+                    //Calculating summary price
+                    int price = Int32.Parse(KmPriceBox.Text) * Int32.Parse(DistanceBox.Text);
+                    //Inserting into database
+                    cmd.Parameters.AddWithValue("@OrderID", number);
+                    cmd.Parameters.AddWithValue("@OrderDate", orderDate);
+                    cmd.Parameters.AddWithValue("@RequiredDate", RequiredDateBox.Text);
+                    cmd.Parameters.AddWithValue("@Destination", DestinationBox.Text);
+                    cmd.Parameters.AddWithValue("@ShippedFrom", ShippedFromBox.Text);
+                    cmd.Parameters.AddWithValue("@ShippedDate",ShippedDateBox.Text);
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerIDBox.Text);
+                    cmd.Parameters.AddWithValue("@Freight", FreighBox.Text);
+                    cmd.Parameters.AddWithValue("@KmPrice", KmPriceBox.Text);
+                    cmd.Parameters.AddWithValue("@Distance", DistanceBox.Text);
+                    cmd.Parameters.AddWithValue("@Price",price);
+                    cmd.ExecuteNonQuery();
+                    //Close connection with database after inserting Order
+                    sql.Close();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                sql.Close();
+            }
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddOrder();
+        }
+        private void Back()
+        {
+            CustomerIDBox.Visibility = Visibility.Hidden;
+            CustomersGrid.Visibility = Visibility.Hidden;
+            DistanceBox.Visibility = Visibility.Hidden;
+            OrderDateBox.Visibility = Visibility.Hidden;
+            RequiredDateBox.Visibility = Visibility.Hidden;
+            PriceBox.Visibility = Visibility.Hidden;
+            ShippedDateBox.Visibility = Visibility.Hidden;
+            ShippedFromBox.Visibility = Visibility.Hidden;
+            KmPriceBox.Visibility = Visibility.Hidden;
+            FreighBox.Visibility = Visibility.Hidden;
+            DestinationBox.Visibility = Visibility.Hidden;
+            CustomerIDBox.Visibility = Visibility.Hidden;
+            AddOrderBtn.Visibility = Visibility.Hidden;
+        }
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Back();
         }
     }
 }
-/*
-String query = "INSERT INTO dbo.SMS_PW (id,username,password,email) VALUES (@id,@username,@password, @email)";
-
-    using(SqlCommand command = new SqlCommand(query, connection))
-    {
-        command.Parameters.AddWithValue("@id", "abc");
-        command.Parameters.AddWithValue("@username", "abc");
-        command.Parameters.AddWithValue("@password", "abc");
-        command.Parameters.AddWithValue("@email", "abc");
-
-        connection.Open();
-        int result = command.ExecuteNonQuery();
-
-        // Check Error
-        if(result < 0)
-            Console.WriteLine("Error inserting data into Database!");
-    }
-*/
