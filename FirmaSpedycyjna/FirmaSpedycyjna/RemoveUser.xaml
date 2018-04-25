@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="FirmaSpedycyjna.RemoveUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirmaSpedycyjna"
+             mc:Ignorable="d" Height="342" Width="480">
+    <Grid Name="UserRemoving" Margin="0,0,80,91">
+        <Button Name="RemoveButton" Click="BtnRemove" Content="Remove" HorizontalAlignment="Left" Margin="208,203,0,0" VerticalAlignment="Top" Width="149" Height="40"/>
+        <ComboBox x:Name="DriverBox" HorizontalAlignment="Left" Margin="23,15,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Background="DarkGray" x:Name="DriverTxt" HorizontalAlignment="Left" Margin="23,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="87" Width="137"/>
+        <DataGrid x:Name="DataGrid"
+                  Margin="23,37,0,0"
+                  Height="Auto" Width="Auto"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsReadOnly="True"/>
+        <Button Click="BtnBack" Name="BackButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="163,16,0,0"/>
+    </Grid>
+</UserControl>
