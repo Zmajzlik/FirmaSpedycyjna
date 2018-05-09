@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\STUDIA\SemestrIV\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\
 FirmaSpedycyjna
 none
 false
 DEBUG;TRACE
-F:\STUDIA\SemestrIV\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\App.xaml
-111480641561
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\App.xaml
+13397143484
 
-151656715698
-751126429637
-AddDriver.xaml;MainWindow.xaml;RemoveUser.xaml;ShowDriversCtrl.xaml;ShowOrdersControl.xaml;ShowOrdersCtrl.xaml;ShowTrailersCtrl.xaml;ShowTruckControl.xaml;ShowCustomersCtrl.xaml;UserGridControl.xaml;Window2.xaml;
+171904791214
+78-1117531775
+AddCustomersCtrl.xaml;AddDriver.xaml;MainWindow.xaml;RemoveUser.xaml;ShowDriversCtrl.xaml;ShowInvoicesCtrl.xaml;ShowOrdersControl.xaml;ShowOrdersCtrl.xaml;ShowTrailersCtrl.xaml;ShowTruckControl.xaml;ShowCustomersCtrl.xaml;UserGridControl.xaml;Window2.xaml;
 
 False
 

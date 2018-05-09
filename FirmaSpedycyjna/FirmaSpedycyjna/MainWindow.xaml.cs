@@ -14,13 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using MahApps.Metro.Controls;
 
 namespace FirmaSpedycyjna
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         string sqlConString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=spedycjaath;User ID=spedycjaath;Password=Qd6QQ~!3f4iN";
 
@@ -29,7 +30,7 @@ namespace FirmaSpedycyjna
             InitializeComponent();
             ImageBrush myBrush = new ImageBrush();
             myBrush.ImageSource =
-                new BitmapImage(new Uri(@"F:\STUDIA\SemestrIV\FirmaSpedycyjna\FirmaSpedycyjna\bg.png", UriKind.Absolute));
+                new BitmapImage(new Uri(@"C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\bg.png", UriKind.Absolute));
             this.Background = myBrush;
         }
         private void CloseAllWindows()
@@ -47,7 +48,7 @@ namespace FirmaSpedycyjna
                 loginCmd.CommandType = System.Data.CommandType.Text;
                 loginCmd.CommandText = "SELECT UserName, UserPassword from OfficeEmployees where UserName = @UserName AND UserPassword = @UserPassword";
                 loginCmd.Parameters.AddWithValue("@UserName", Login_Box.Text);
-                loginCmd.Parameters.AddWithValue("@UserPassword", usrPassword.Text);
+                loginCmd.Parameters.AddWithValue("@UserPassword", PasswordBox.Password);
                 loginCmd.ExecuteNonQuery();
                 SqlDataReader dr = loginCmd.ExecuteReader();
 

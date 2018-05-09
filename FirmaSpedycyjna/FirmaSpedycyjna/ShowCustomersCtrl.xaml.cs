@@ -45,12 +45,20 @@ namespace FirmaSpedycyjna
         }
         private void Back()
         {
+            AddCustomer.Visibility = Visibility.Hidden;
             CustomersGrid.Visibility = Visibility.Hidden;
             BackButton.Visibility = Visibility.Hidden;
         }
         private void BckBtn(object sender, RoutedEventArgs e)
         {
             Back();   
+        }
+
+        private void AddCust(object sender, RoutedEventArgs e)
+        {
+            Back();
+            AddCustomersCtrl newCustomer = new AddCustomersCtrl();
+            AddCustomers.Children.Add(newCustomer);
         }
     }   
 }

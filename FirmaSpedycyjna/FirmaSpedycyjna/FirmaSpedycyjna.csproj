@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,6 +48,9 @@
     </Reference>
     <Reference Include="GoogleMaps.LocationServices, Version=0.1.6329.16944, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GoogleMaps.LocationServices.1.2.0.1\lib\net40\GoogleMaps.LocationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.1\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -60,6 +66,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -78,6 +87,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCustomersCtrl.xaml.cs">
+      <DependentUpon>AddCustomersCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddDriver.xaml.cs">
       <DependentUpon>AddDriver.xaml</DependentUpon>
     </Compile>
@@ -86,6 +98,9 @@
     </Compile>
     <Compile Include="ShowDriversCtrl.xaml.cs">
       <DependentUpon>ShowDriversCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowInvoicesCtrl.xaml.cs">
+      <DependentUpon>ShowInvoicesCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowOrdersControl.xaml.cs">
       <DependentUpon>ShowOrdersControl.xaml</DependentUpon>
@@ -108,6 +123,10 @@
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddCustomersCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddDriver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ShowDriversCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowInvoicesCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

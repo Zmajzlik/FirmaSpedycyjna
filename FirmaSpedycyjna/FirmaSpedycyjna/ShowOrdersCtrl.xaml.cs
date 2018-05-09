@@ -69,7 +69,7 @@ namespace FirmaSpedycyjna
                     int number = 1;
                     number += 1;
                     DateTime orderDate = DateTime.Today;
-                    //Calculating summary price
+                    //Calcula`ting summary price
                     int price = Int32.Parse(KmPriceBox.Text) * Int32.Parse(DistanceBox.Text);
                     //Inserting into database
                     cmd.Parameters.AddWithValue("@OrderID", number);
@@ -82,14 +82,15 @@ namespace FirmaSpedycyjna
                     cmd.Parameters.AddWithValue("@Freight", FreighBox.Text);
                     cmd.Parameters.AddWithValue("@KmPrice", KmPriceBox.Text);
                     cmd.Parameters.AddWithValue("@Distance", DistanceBox.Text);
-                    cmd.Parameters.AddWithValue("@Price",price);
+                    PriceBox.Text= price.ToString();
+                    cmd.Parameters.AddWithValue("@Price",price);    
                     cmd.ExecuteNonQuery();
                     //Close connection with database after inserting Order
                     sql.Close();
                 }
             }
             catch (Exception ex)
-            {
+            { 
                 MessageBox.Show(ex.Message);
                 sql.Close();
             }

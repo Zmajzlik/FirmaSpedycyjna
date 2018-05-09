@@ -1,0 +1,5 @@
+To do list - Shipping Business:
+	1. PasswordBox
+	2. Padding na LoginBox
+	3. Po kliknieciu dowolnego Button'a znikają poprzednie gridy.
+	4. 
