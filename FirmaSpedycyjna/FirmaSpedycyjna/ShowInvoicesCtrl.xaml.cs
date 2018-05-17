@@ -32,9 +32,11 @@ namespace FirmaSpedycyjna
         }
         private void FillComboBox()
         {
+            CustomerInvoicesGrid.Visibility = Visibility.Hidden;
             SqlConnection sql = new SqlConnection(sqlConString);
             try
             {
+                CustomerInvoicesGrid.Visibility = Visibility.Visible;
                 sql.Open();
                 using (SqlCommand query = new SqlCommand())
                 {

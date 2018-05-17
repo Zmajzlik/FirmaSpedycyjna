@@ -38,7 +38,7 @@ namespace FirmaSpedycyjna
         }
         private void FillData()
         {
-            string showByName = "SELECT Drivers.DriverID,FirstName,LastName,convert(varchar(10),BirthDate ) as BirthDate,Truck,ADR,Busy from Employees" +
+            string showByName = "SELECT Drivers.DriverID,FirstName,LastName,convert(varchar(10),BirthDate    ) as BirthDate,Truck,ADR,Busy from Employees" +
                 " join Drivers on Employees.EmployeeID=Drivers.EmployeeID" +
                 " join Trucks on Trucks.DriverID=Drivers.DriverID";
             SqlConnection sql = new SqlConnection(sqlConString);
@@ -54,13 +54,12 @@ namespace FirmaSpedycyjna
         }
         private void BtnAdd(object sender, RoutedEventArgs e) 
         {
-            GridDrivers.Visibility = Visibility.Hidden;
-            ButtonBack.Visibility = Visibility.Hidden;
-            RemoveButton.Visibility = Visibility.Hidden;
             AddButton.Visibility = Visibility.Hidden;
             drvGrd.Visibility = Visibility.Hidden;
-            AddDriver addDrv = new AddDriver();
-            GridForAdding.Children.Add(addDrv);   
+            RemoveButton.Visibility = Visibility.Hidden;
+            ButtonBack.Visibility = Visibility.Hidden;
+            AddDriversCtrl drvAdd = new AddDriversCtrl();
+            GridForAdding.Children.Add(drvAdd);
         }
         private void BtnRemove(object sender, RoutedEventArgs e)
         {
@@ -71,7 +70,6 @@ namespace FirmaSpedycyjna
             ButtonBack.Visibility = Visibility.Hidden;
             RemoveUser rmvUser = new RemoveUser();
             GridForRemoving.Children.Add(rmvUser);
-
         }
     }
 }

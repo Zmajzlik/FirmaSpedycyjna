@@ -52,9 +52,11 @@ namespace FirmaSpedycyjna
             GridForShowingInvoices.Visibility = Visibility.Hidden;
             GridForShowingTrailers.Visibility = Visibility.Hidden;
             GridForShowingTrucks.Visibility = Visibility.Hidden;
-            ShowOrdersControl showOrd = new ShowOrdersControl();
+            GridForShowingDrivers.Visibility = Visibility.Hidden;
+            GridForShowingOrders.Visibility = Visibility.Visible;
+            ShowOrdersCtrl showOrd = new ShowOrdersCtrl();
             GridForShowingOrders.Children.Add(showOrd);
-            GridForShowingDrivers.Visibility= Visibility.Visible;
+            
         }
         private void Customers()
         {
@@ -109,7 +111,6 @@ namespace FirmaSpedycyjna
         {
             GridForAdding.Visibility = Visibility.Hidden;
             GridForShowingCustomers.Visibility = Visibility.Hidden;
-            GridForShowingDrivers.Visibility = Visibility.Visible;
             GridForShowingInvoices.Visibility = Visibility.Hidden;
             GridForShowingOrders.Visibility = Visibility.Hidden;
             GridForShowingTrailers.Visibility = Visibility.Hidden;

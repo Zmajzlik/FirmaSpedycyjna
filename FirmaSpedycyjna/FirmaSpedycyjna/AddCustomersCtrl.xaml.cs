@@ -26,31 +26,30 @@ namespace FirmaSpedycyjna
             InitializeComponent();
             GetID();
         }
-        private void GetID()
-        {
-            try
+            private void GetID()
             {
-                
-                string sqlQuery = "SELECT TOP 1 CustomerID from Customers order by CustomerID desc";
-                SqlConnection sql = new SqlConnection(sqlConString);
-                sql.Open();
-                SqlCommand cmd = new SqlCommand(sqlQuery, sql);
-                SqlDataReader dr = cmd.ExecuteReader();
+                try
+                {            
+                    string sqlQuery = "SELECT TOP 1 CustomerID from Customers order by CustomerID desc";
+                    SqlConnection sql = new SqlConnection(sqlConString);
+                    sql.Open();
+                    SqlCommand cmd = new SqlCommand(sqlQuery, sql);
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                while (dr.Read())
-                {
-                    string input = dr["CustomerID"].ToString();
-                    string angka = input.Substring(input.Length - Math.Min(3, input.Length));
-                    int number = Convert.ToInt32(angka);
-                    number += 1;
-                    string str = number.ToString("D3");
-                    IDBox.Text = str;
+                    while (dr.Read())
+                    {
+                        string input = dr["CustomerID"].ToString();
+                        string angka = input.Substring(input.Length - Math.Min(3, input.Length));
+                        int number = Convert.ToInt32(angka);
+                        number += 1;
+                        string str = number.ToString("D3");
+                        IDBox.Text = str;
+                    }
+                }
+                catch {
+
                 }
             }
-            catch {
-
-            }
-        }
         private void AddCustomers()
         {
             SqlConnection sql = new SqlConnection(sqlConString);

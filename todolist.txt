@@ -1,5 +1,3 @@
-To do list - Shipping Business:
-	1. PasswordBox
-	2. Padding na LoginBox
-	3. Po kliknieciu dowolnego Button'a znikają poprzednie gridy.
-	4. 
+﻿To do list - Shipping Business:
+  1. Invoices - don't show DataGrid when customers is not selected.
+  3. Move button in Customers	

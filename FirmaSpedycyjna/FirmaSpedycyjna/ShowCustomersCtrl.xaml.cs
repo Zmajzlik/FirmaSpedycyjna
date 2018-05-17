@@ -31,20 +31,30 @@ namespace FirmaSpedycyjna
         }
         private void FillDataGrid()
         {
-            SqlConnection sql = new SqlConnection(sqlConString);
-            sql.Open();
-            string query = "SELECT * from Customers";
-            SqlCommand show = sql.CreateCommand();
-            show.CommandType = System.Data.CommandType.Text;
-            show.CommandText = query;
-            show.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(show);
-            da.Fill(dt);
-            CustomersGrid.ItemsSource = dt.DefaultView;
+            CustomersGrid.Visibility = Visibility.Hidden;
+            try
+            {
+                CustomersGrid.Visibility = Visibility.Visible;
+                SqlConnection sql = new SqlConnection(sqlConString);
+                sql.Open();
+                string query = "SELECT * from Customers";
+                SqlCommand show = sql.CreateCommand();
+                show.CommandType = System.Data.CommandType.Text;
+                show.CommandText = query;
+                show.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(show);
+                da.Fill(dt);
+                CustomersGrid.ItemsSource = dt.DefaultView;
+            }
+            catch
+            {
+
+            }
         }
         private void Back()
         {
+            RmvCustomer.Visibility = Visibility.Hidden;
             AddCustomer.Visibility = Visibility.Hidden;
             CustomersGrid.Visibility = Visibility.Hidden;
             BackButton.Visibility = Visibility.Hidden;
@@ -53,7 +63,10 @@ namespace FirmaSpedycyjna
         {
             Back();   
         }
+        private void RmvCust(object sender, RoutedEventArgs e)
+        {
 
+        }
         private void AddCust(object sender, RoutedEventArgs e)
         {
             Back();

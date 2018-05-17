@@ -33,7 +33,7 @@ namespace FirmaSpedycyjna
         {
             SqlConnection sql = new SqlConnection(sqlConString);
             //Inserting customers data to DataGrid
-            string showcust = "SELECT CONCAT('(',CustomerID,')',' ',CompanyName) as Customer from Customers";
+            string showcust = "SELECT CONCAT('(',Customers.CustomerID,')',' ',CompanyName) as Customer,Freight, Price, OrderDate, ShippedDate, ShippedFrom,Destination from Customers join Orders on Orders.CustomerID=Customers.CustomerID join OrderDetails on OrderDetails.OrderID=Orders.OrderID";
             try
             {
                 sql.Open();
@@ -43,11 +43,10 @@ namespace FirmaSpedycyjna
                     SqlDataAdapter sdr = new SqlDataAdapter(show);
                     DataTable dt = new DataTable();
                     sdr.Fill(dt);
-                    CustomersGrid.ItemsSource = dt.DefaultView;
-                    show.ExecuteNonQuery();  
+                    DataGridForOrders.ItemsSource = dt.DefaultView;
                 }
                 //Close connection after inserting data
-                sql.Close();
+                //sql.Close();
 
             }
             catch (Exception ex)
@@ -58,42 +57,7 @@ namespace FirmaSpedycyjna
         }
         private void AddOrder()
         {
-            SqlConnection sql = new SqlConnection(sqlConString);
-            String query = "INSERT INTO Orders (OrderID, OrderDate,RequiredDate, Destination, ShippedFrom, ShippedDate,CustomerID) VALUES (@OrderID,@CustomerID,@OrderDate,@RequiredDate,@Destination,@ShippedFrom,@ShippedDate,@CustomerID)";
-            try
-            {
-                sql.Open();
-                using (SqlCommand cmd = new SqlCommand(query,sql))
-                {
-                    //Generating number and get current date
-                    int number = 1;
-                    number += 1;
-                    DateTime orderDate = DateTime.Today;
-                    //Calcula`ting summary price
-                    int price = Int32.Parse(KmPriceBox.Text) * Int32.Parse(DistanceBox.Text);
-                    //Inserting into database
-                    cmd.Parameters.AddWithValue("@OrderID", number);
-                    cmd.Parameters.AddWithValue("@OrderDate", orderDate);
-                    cmd.Parameters.AddWithValue("@RequiredDate", RequiredDateBox.Text);
-                    cmd.Parameters.AddWithValue("@Destination", DestinationBox.Text);
-                    cmd.Parameters.AddWithValue("@ShippedFrom", ShippedFromBox.Text);
-                    cmd.Parameters.AddWithValue("@ShippedDate",ShippedDateBox.Text);
-                    cmd.Parameters.AddWithValue("@CustomerID", CustomerIDBox.Text);
-                    cmd.Parameters.AddWithValue("@Freight", FreighBox.Text);
-                    cmd.Parameters.AddWithValue("@KmPrice", KmPriceBox.Text);
-                    cmd.Parameters.AddWithValue("@Distance", DistanceBox.Text);
-                    PriceBox.Text= price.ToString();
-                    cmd.Parameters.AddWithValue("@Price",price);    
-                    cmd.ExecuteNonQuery();
-                    //Close connection with database after inserting Order
-                    sql.Close();
-                }
-            }
-            catch (Exception ex)
-            { 
-                MessageBox.Show(ex.Message);
-                sql.Close();
-            }
+            
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -102,20 +66,13 @@ namespace FirmaSpedycyjna
         }
         private void Back()
         {
-            CustomerIDBox.Visibility = Visibility.Hidden;
-            CustomersGrid.Visibility = Visibility.Hidden;
-            DistanceBox.Visibility = Visibility.Hidden;
-            OrderDateBox.Visibility = Visibility.Hidden;
-            RequiredDateBox.Visibility = Visibility.Hidden;
-            PriceBox.Visibility = Visibility.Hidden;
-            ShippedDateBox.Visibility = Visibility.Hidden;
-            ShippedFromBox.Visibility = Visibility.Hidden;
-            KmPriceBox.Visibility = Visibility.Hidden;
-            FreighBox.Visibility = Visibility.Hidden;
-            DestinationBox.Visibility = Visibility.Hidden;
-            CustomerIDBox.Visibility = Visibility.Hidden;
+            RmvOrderBtn.Visibility = Visibility.Hidden;
             AddOrderBtn.Visibility = Visibility.Hidden;
+            BackBtn.Visibility = Visibility.Hidden;
+            DataGridForOrders.Visibility = Visibility.Hidden;
         }
+        private void RmvBtn_Click(object sender, RoutedEventArgs e)
+        { }
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             Back();

@@ -9,7 +9,7 @@
         Title="SpedMax - control your shipping business" Height="720" Width="1280" WindowStartupLocation="CenterScreen" >
     <Grid Name="LoginHead" HorizontalAlignment="Left" Height="202" Margin="812,216,0,0" VerticalAlignment="Top" Width="284">
         <Button FontWeight="SemiBold" FontSize="24" Content="Login" HorizontalAlignment="Right" Margin="0,87,35,0" VerticalAlignment="Top" Width="100" Height="45" Click="LoginBtn" RenderTransformOrigin="0.505,0.382"/>
-        <Label FontWeight="Bold" FontSize="18" Content="    Login:" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Height="33" Width="85"/>
+        <Label FontWeight="Bold" FontSize="18" Content="Login:" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Height="33" Width="85"/>
         <Label FontWeight="Bold" FontSize="18" Content="  Password:" HorizontalAlignment="Left" Margin="17,49,0,0" VerticalAlignment="Top" Height="41" Width="104"/>
         <TextBox FontSize="14" TextAlignment="Center" x:Name="Login_Box" HorizontalAlignment="Left" Height="30" Margin="120,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
         <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Height="30" Margin="121,52,0,0" VerticalAlignment="Top" Width="154"/>

@@ -92,7 +92,6 @@ F:\STUDIA\SemestrIV\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\Fi
 F:\STUDIA\SemestrIV\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\FirmaSpedycyjna.csproj.CopyComplete
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\FirmaSpedycyjna.csprojResolveAssemblyReference.cache
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\Window2.baml
-C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriver.g.cs
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\MainWindow.g.cs
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\RemoveUser.g.cs
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\ShowDriversCtrl.g.cs
@@ -121,7 +120,6 @@ C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\bin\Debug
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\bin\Debug\EntityFramework.xml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriver.baml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\MainWindow.baml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\RemoveUser.baml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\ShowDriversCtrl.baml
@@ -147,3 +145,5 @@ C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\ShowInvoicesCtrl.baml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddCustomersCtrl.g.cs
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddCustomersCtrl.baml
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriversCtrl.g.cs
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriversCtrl.baml

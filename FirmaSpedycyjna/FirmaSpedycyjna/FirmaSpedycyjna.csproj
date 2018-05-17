@@ -90,8 +90,8 @@
     <Compile Include="AddCustomersCtrl.xaml.cs">
       <DependentUpon>AddCustomersCtrl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddDriver.xaml.cs">
-      <DependentUpon>AddDriver.xaml</DependentUpon>
+    <Compile Include="AddDriversCtrl.xaml.cs">
+      <DependentUpon>AddDriversCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="RemoveUser.xaml.cs">
       <DependentUpon>RemoveUser.xaml</DependentUpon>
@@ -127,7 +127,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddDriver.xaml">
+    <Page Include="AddDriversCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
