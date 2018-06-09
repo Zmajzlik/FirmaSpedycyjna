@@ -147,3 +147,5 @@ C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddCustomersCtrl.baml
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriversCtrl.g.cs
 C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\AddDriversCtrl.baml
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\RemoveDriver.g.cs
+C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\FirmaSpedycyjna\obj\Debug\RemoveDriver.baml

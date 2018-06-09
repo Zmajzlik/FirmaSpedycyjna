@@ -23,7 +23,7 @@ namespace FirmaSpedycyjna
     /// </summary>
     public partial class ShowInvoicesCtrl : UserControl
     {
-        string sqlConString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=spedycjaath;User ID=spedycjaath;Password=Qd6QQ~!3f4iN";
+         string sqlConString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=spedycjaath;User ID=spedycjaath;Password=Qd6QQ~!3f4iN";
 
         public ShowInvoicesCtrl()
         {

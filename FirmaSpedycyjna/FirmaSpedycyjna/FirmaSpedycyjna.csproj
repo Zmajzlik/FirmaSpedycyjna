@@ -93,6 +93,9 @@
     <Compile Include="AddDriversCtrl.xaml.cs">
       <DependentUpon>AddDriversCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RemoveDriver.xaml.cs">
+      <DependentUpon>RemoveDriver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RemoveUser.xaml.cs">
       <DependentUpon>RemoveUser.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RemoveDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RemoveUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

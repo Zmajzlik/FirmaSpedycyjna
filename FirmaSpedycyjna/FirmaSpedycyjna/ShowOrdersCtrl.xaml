@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid Margin="0,-5,0,5">
-        <Button Name="AddOrderBtn" Click="AddBtn_Click" Content="New order" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Name="BackBtn" Click="BackBtn_Click" Content="Back" HorizontalAlignment="Left" Margin="171,5,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.054,0.704"/>
+        <Button Name="AddOrderBtn" Click="AddBtn_Click" Content="New order" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="BackBtn" Click="BackBtn_Click" Content="Back" HorizontalAlignment="Left" Margin="181,10,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.054,0.704"/>
         <DataGrid Name="DataGridForOrders" HorizontalAlignment="Left" Height="Auto" Margin="10,37,0,0" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="0.636,1.64"/>
-        <Button Name="RmvOrderBtn" Click="RmvBtn_Click" Content="Remove order" HorizontalAlignment="Left" Margin="75,5,0,0" VerticalAlignment="Top" Width="96"/>
+        <Button Name="RmvOrderBtn" Click="RmvBtn_Click" Content="Remove order" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Width="96"/>
 
     </Grid>
 </UserControl>

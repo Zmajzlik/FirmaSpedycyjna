@@ -115,6 +115,7 @@ namespace FirmaSpedycyjna
             GridForShowingOrders.Visibility = Visibility.Hidden;
             GridForShowingTrailers.Visibility = Visibility.Hidden;
             GridForShowingTrucks.Visibility = Visibility.Hidden;
+            GridForShowingDrivers.Visibility = Visibility.Visible;
             ShowDriversCtrl drvShow = new ShowDriversCtrl();
             GridForShowingDrivers.Children.Add(drvShow);
         }

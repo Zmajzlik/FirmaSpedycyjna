@@ -68,8 +68,8 @@ namespace FirmaSpedycyjna
             GridForAdding.Visibility = Visibility.Hidden;
             RemoveButton.Visibility = Visibility.Hidden;
             ButtonBack.Visibility = Visibility.Hidden;
-            RemoveUser rmvUser = new RemoveUser();
-            GridForRemoving.Children.Add(rmvUser);
+            RemoveDriver rmvDrv = new RemoveDriver();
+            GridForRemoving.Children.Add(rmvDrv);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="FirmaSpedycyjna.ShowTruckControl"
+﻿<UserControl x:Class="FirmaSpedycyjna.RemoveDriver"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:FirmaSpedycyjna"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Name="TrucksGrid" Margin="0,-1,0,1">
-        <DataGrid Width="Auto" Name="TruckGrid" HorizontalAlignment="Left" Height="Auto" Margin="0,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.104,-0.581" IsReadOnly="True">
-        </DataGrid>
-        <Button Click="BckBtnClick" Content="Back" Margin="0,14,0,0" VerticalAlignment="Top" Height="21" HorizontalAlignment="Left" Width="75"/>
+    <Grid>
+        <DataGrid Name="DriversInfo" HorizontalAlignment="Left" Height="100" Margin="0,46,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox Name="DriverBox" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </UserControl>
