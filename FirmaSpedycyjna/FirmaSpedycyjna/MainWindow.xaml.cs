@@ -27,11 +27,7 @@ namespace FirmaSpedycyjna
 
         public MainWindow()
         {
-            InitializeComponent();
-            ImageBrush myBrush = new ImageBrush();
-            myBrush.ImageSource =
-                new BitmapImage(new Uri(@"C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\bg.png", UriKind.Absolute));
-            this.Background = myBrush;
+            InitializeComponent(); 
         }
         private void CloseAllWindows()
         {

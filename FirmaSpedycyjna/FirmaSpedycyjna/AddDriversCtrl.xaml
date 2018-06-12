@@ -7,16 +7,16 @@
              mc:Ignorable="d" 
               d:DesignHeight="450" d:DesignWidth="800">
     <Grid Name="AddDrvGrd" Margin="0,7,-177,-7">
-        <Button Content="Submit" Click="SubmitBtn" HorizontalAlignment="Left" Margin="314,213,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="SubmitBut" Content="Submit" Click="SubmitBtn" HorizontalAlignment="Left" Margin="609,77,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBox Name="FNameBox" HorizontalAlignment="Left" Height="18" Margin="14,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
         <TextBox Name="LNameBox" HorizontalAlignment="Left" Height="18" Margin="133,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
         <TextBox Name="TruckBox" HorizontalAlignment="Left" Height="18" Margin="490,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="14,21,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="133,21,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="252,21,0,0" TextWrapping="Wrap" Text="Birth Date" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="371,21,0,0" TextWrapping="Wrap" Text="Hire Date" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="490,21,0,0" TextWrapping="Wrap" Text="Truck" VerticalAlignment="Top" Width="119"/>
-        <TextBox TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="609,21,0,0" TextWrapping="Wrap" Text="License Plate" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="FNameTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="14,21,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="LNameTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="133,21,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="BDayTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="252,21,0,0" TextWrapping="Wrap" Text="Birth Date" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="HDayTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="371,21,0,0" TextWrapping="Wrap" Text="Hire Date" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="TruckTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="490,21,0,0" TextWrapping="Wrap" Text="Truck" VerticalAlignment="Top" Width="119"/>
+        <TextBox Name="LPlateTxt" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="609,21,0,0" TextWrapping="Wrap" Text="License Plate" VerticalAlignment="Top" Width="119"/>
         <TextBox Name="LicensePlateBox" HorizontalAlignment="Left" Height="18" Margin="609,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"/>
         <DatePicker Name="BirthDate" HorizontalAlignment="Left" Margin="252,47,0,0" VerticalAlignment="Top" Width="119"/>
         <DatePicker Name="HireDate" HorizontalAlignment="Left" Margin="371,47,0,0" VerticalAlignment="Top" Width="119"/>

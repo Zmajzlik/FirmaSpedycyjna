@@ -28,10 +28,12 @@ namespace FirmaSpedycyjna
         public ShowInvoicesCtrl()
         {
             InitializeComponent();
+            FillDataGrid();
             FillComboBox();
         }
         private void FillComboBox()
         {
+            
             CustomerInvoicesGrid.Visibility = Visibility.Hidden;
             SqlConnection sql = new SqlConnection(sqlConString);
             try
@@ -40,7 +42,7 @@ namespace FirmaSpedycyjna
                 sql.Open();
                 using (SqlCommand query = new SqlCommand())
                 {
-                    string task = "select CONCAT('(',Customers.CustomerID,')',' ',CompanyName, ' - ',Country) as Company, CompanyName as [Company Name], OrderDate, Freight,Price,Distance from Customers join Orders on Customers.CustomerID=Orders.CustomerID join OrderDetails on Orders.OrderID=OrderDetails.OrderID";
+                    string task = "select CONCAT('(',Customers.CustomerID,')',' ',CompanyName, ' - ',Country) as Company, CompanyName as [Company Name], convert(varchar(10),OrderDate) as [Order Date], Freight,Price,Distance from Customers join Orders on Customers.CustomerID=Orders.CustomerID join OrderDetails on Orders.OrderID=OrderDetails.OrderID";
                     SqlCommand push = new SqlCommand(task, sql);
                     push.ExecuteNonQuery();
                     DataTable dt = new DataTable();
@@ -52,6 +54,7 @@ namespace FirmaSpedycyjna
                     }
                     CustomerBox.SelectionChanged += (o, a) =>
                     {
+                        InvoicesGrid.Visibility = Visibility.Hidden;
                         var selectedCustomer = new
                         {
                             CompanyName = dt.Rows[CustomerBox.SelectedIndex][1].ToString(),
@@ -59,10 +62,8 @@ namespace FirmaSpedycyjna
                             Freight = dt.Rows[CustomerBox.SelectedIndex][3].ToString(),
                             InvoiceValue = dt.Rows[CustomerBox.SelectedIndex][4].ToString(),
                             Distance = dt.Rows[CustomerBox.SelectedIndex][5].ToString(),
-
                         };
                         CustomerInvoicesGrid.ItemsSource = new[] { selectedCustomer };
-
                     };
                 }
                 sql.Close();
@@ -74,12 +75,35 @@ namespace FirmaSpedycyjna
                 sql.Close();
             }
         }
+        private void FillDataGrid()
+        {
+            CustomerInvoicesGrid.Visibility = Visibility.Hidden;
+            string query = "select CONCAT('(',Customers.CustomerID,')',' ',CompanyName, ' - ',Country) as Company, CompanyName as [Company Name], convert(varchar(10),OrderDate) as [Order Date], Freight,Price,Distance from Customers join Orders on Customers.CustomerID=Orders.CustomerID join OrderDetails on Orders.OrderID=OrderDetails.OrderID";
+            SqlConnection sql = new SqlConnection(sqlConString);
+            try
+            {
+                sql.Open();
+                using (SqlCommand filldata = new SqlCommand())
+                {
+                    SqlCommand fill = new SqlCommand(query, sql);
+                    SqlDataAdapter sda = new SqlDataAdapter(fill);
+                    DataTable dtf = new DataTable();
+                    sda.Fill(dtf);
+                    InvoicesGrid.ItemsSource = dtf.DefaultView;
+                }
+                sql.Close();
+            }
+            catch
+            {
+                sql.Close();
+            }
+        }
         private void Back()
         {
             CustomerInvoicesGrid.Visibility = Visibility.Hidden;
             CustomerBox.Visibility = Visibility.Hidden;
+            BackButton.Visibility = Visibility.Hidden;
         }
-
         private void BackBtn(object sender, RoutedEventArgs e)
         {
             Back();

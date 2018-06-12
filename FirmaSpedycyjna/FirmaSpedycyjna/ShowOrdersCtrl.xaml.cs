@@ -46,7 +46,7 @@ namespace FirmaSpedycyjna
                     DataGridForOrders.ItemsSource = dt.DefaultView;
                 }
                 //Close connection after inserting data
-                //sql.Close();
+                sql.Close();
 
             }
             catch (Exception ex)
@@ -55,14 +55,14 @@ namespace FirmaSpedycyjna
                 sql.Close();
             }
         }
-        private void AddOrder()
-        {
-            
-        }
-
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddOrder();
+            RmvOrderBtn.Visibility = Visibility.Hidden;
+            AddOrderBtn.Visibility = Visibility.Hidden;
+            BackBtn.Visibility = Visibility.Hidden;
+            DataGridForOrders.Visibility = Visibility.Hidden;
+            AddOrder newOrder = new AddOrder();
+            AddNewOrder.Children.Add(newOrder);
         }
         private void Back()
         {

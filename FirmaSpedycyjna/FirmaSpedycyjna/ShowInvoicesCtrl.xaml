@@ -8,8 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ComboBox Name="CustomerBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
-        <DataGrid Name="CustomerInvoicesGrid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="10,52,0,0"/>
-        <Button Click="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="536,-1,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid Name="CustomerInvoicesGrid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="0,26,0,0" RenderTransformOrigin="-0.195,-0.405"/>
+        <DataGrid Name="InvoicesGrid" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="0,26,0,0"/>
+        <Button Name="BackButton" Click="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="536,-1,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </UserControl>

@@ -58,6 +58,7 @@ namespace FirmaSpedycyjna
             AddCustomer.Visibility = Visibility.Hidden;
             CustomersGrid.Visibility = Visibility.Hidden;
             BackButton.Visibility = Visibility.Hidden;
+            
         }
         private void BckBtn(object sender, RoutedEventArgs e)
         {

@@ -93,6 +93,9 @@
     <Compile Include="AddDriversCtrl.xaml.cs">
       <DependentUpon>AddDriversCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddOrder.xaml.cs">
+      <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RemoveDriver.xaml.cs">
       <DependentUpon>RemoveDriver.xaml</DependentUpon>
     </Compile>
@@ -104,9 +107,6 @@
     </Compile>
     <Compile Include="ShowInvoicesCtrl.xaml.cs">
       <DependentUpon>ShowInvoicesCtrl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ShowOrdersControl.xaml.cs">
-      <DependentUpon>ShowOrdersControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowOrdersCtrl.xaml.cs">
       <DependentUpon>ShowOrdersCtrl.xaml</DependentUpon>
@@ -131,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddDriversCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,10 +163,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ShowInvoicesCtrl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ShowOrdersControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="GoogleMaps.LocationServices.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

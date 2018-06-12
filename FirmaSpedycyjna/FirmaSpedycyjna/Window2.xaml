@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="SpedMax - control your shipping business" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+        Title="SpedMax - control your shipping business" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="pictures/bg.png"/>
+    </Window.Background>
     <Grid Height="586" VerticalAlignment="Top">
-        <Button Content="Add User" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="addUsr"/>
+        <Button Name="AddButton" Content="Add User" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="addUsr"/>
         <Button Content="Customers" HorizontalAlignment="Left" Margin="0,285,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="customersBtn" />
         <Button Content="Orders" HorizontalAlignment="Left" Margin="0,318,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="ordersBtn"/>
         <Button Content="Trucks" HorizontalAlignment="Left" Margin="0,351,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="trucksBtn"/>

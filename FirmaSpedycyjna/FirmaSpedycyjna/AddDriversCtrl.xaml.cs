@@ -31,7 +31,7 @@ namespace FirmaSpedycyjna
         }
         private void GetID()
         {
-            Random rnd = new Random();
+                Random rnd = new Random();
                 string sqlQuery = "SELECT TOP 1 EmployeeID from Employees order by EmployeeID desc";
                 SqlConnection sql = new SqlConnection(sqlConString);
                 sql.Open();
@@ -73,7 +73,7 @@ namespace FirmaSpedycyjna
                     IDBox3.Text = str3;
                 }
             dr3.Close();
-                string sqlQuery4 = "SELECT TOP 1 EmployeeID from Drivers order by EmployeeID desc";
+                string sqlQuery4 = "SELECT TOP 1 EmployeeID from Employees order by EmployeeID desc";
                 SqlCommand cmd4 = new SqlCommand(sqlQuery4, sql);
                 SqlDataReader dr4 = cmd4.ExecuteReader();
                 while (dr4.Read())
@@ -94,7 +94,7 @@ namespace FirmaSpedycyjna
                     string input = dr5["EmployeeID"].ToString();
                     string angka5 = input.Substring(input.Length - Math.Min(3, input.Length));
                     int number5 = Convert.ToInt32(angka5);
-                    number5 += 0;
+                    number5 += 1;
                     string str5 = number5.ToString("D7");
                     IDBox5.Text = str5;
                 }
@@ -108,7 +108,6 @@ namespace FirmaSpedycyjna
         }
         private void AddDrivers()
         {
-            
             SqlConnection sql = new SqlConnection(sqlConString);
             sql.Open();
             try
@@ -140,6 +139,7 @@ namespace FirmaSpedycyjna
                 addToTrucks.Parameters.AddWithValue("@DriverID", IDBox2.Text);
                 addToTrucks.Parameters.AddWithValue("@Truck", TruckBox.Text);
                 addToTrucks.Parameters.AddWithValue("@LicensePlate", LicensePlateBox.Text);
+                //Execute
                 addToDrivers.ExecuteNonQuery();
                 addToEmployees.ExecuteNonQuery();
                 addToTrucks.ExecuteNonQuery();
@@ -150,9 +150,32 @@ namespace FirmaSpedycyjna
             }
 
         }
+        private void Hide()
+        {
+            FNameBox.Visibility = Visibility.Hidden;
+            LNameBox.Visibility = Visibility.Hidden;
+            TruckBox.Visibility = Visibility.Hidden;
+            LicensePlateBox.Visibility = Visibility.Hidden;
+            IDBox2.Visibility = Visibility.Hidden;
+            IDBox.Visibility = Visibility.Hidden;
+            IDBox3.Visibility = Visibility.Hidden;
+            IDBox5.Visibility = Visibility.Hidden;
+            ADRBox.Visibility = Visibility.Hidden;
+            HireDate.Visibility = Visibility.Hidden;
+            BirthDate.Visibility = Visibility.Hidden;
+            TruckIDBox.Visibility = Visibility.Hidden;
+            FNameTxt.Visibility = Visibility.Hidden;
+            LNameTxt.Visibility = Visibility.Hidden;
+            BDayTxt.Visibility = Visibility.Hidden;
+            HDayTxt.Visibility = Visibility.Hidden;
+            TruckTxt.Visibility = Visibility.Hidden;
+            LPlateTxt.Visibility = Visibility.Hidden;
+            SubmitBut.Visibility = Visibility.Hidden;
+        }
         private void SubmitBtn(object sender, RoutedEventArgs e)
         {
             AddDrivers();
+            Hide();
         }
     }
 }

@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Name="GridForAddingCustomers">
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Company Name" VerticalAlignment="Top" Width="122" Margin="7,58,0,0"/>
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,58,0,0" TextWrapping="Wrap" Text="Company Address" VerticalAlignment="Top" Width="Auto"/>
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="237,58,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="66"/>
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Region" VerticalAlignment="Top" Width="65" Margin="303,58,0,0"/>
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="368,58,0,0" TextWrapping="Wrap" Text="Postal Code" VerticalAlignment="Top" Width="75"/>
-        <TextBox IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="443,58,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" Width="95"/>
+        <TextBox Name="COMNamTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Company Name" VerticalAlignment="Top" Width="122" Margin="7,58,0,0"/>
+        <TextBox Name="COMAddTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,58,0,0" TextWrapping="Wrap" Text="Company Address" VerticalAlignment="Top" Width="Auto"/>
+        <TextBox Name="CityTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="237,58,0,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="66"/>
+        <TextBox Name="RegionTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Region" VerticalAlignment="Top" Width="65" Margin="303,58,0,0"/>
+        <TextBox Name="PostCodeTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="368,58,0,0" TextWrapping="Wrap" Text="Postal Code" VerticalAlignment="Top" Width="75"/>
+        <TextBox Name="CountryTxt" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="443,58,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" Width="95"/>
         <TextBox Name="CompNameBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Margin="7,84,0,0"/>
         <TextBox Name="CompAddrBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Margin="129,84,0,0"/>
         <TextBox Name="CompCityBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" Margin="237,84,0,0"/>
@@ -20,7 +20,7 @@
         <TextBox Name="CompPostalBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="368,84,0,0"/>
         <TextBox Name="CompCountryBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="443,84,0,0"/>
         <TextBox Visibility="Hidden" Name="IDBox" HorizontalAlignment="Left" Height="23" Margin="27,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Name="AddButton" Click="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="267,210,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Name="BackButton" Click="BackBtn" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="179,210,0,0"/>
+        <Button Name="AddButton" Click="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="BackButton" Click="BackBtn" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="463,115,0,0"/>
     </Grid>
 </UserControl>

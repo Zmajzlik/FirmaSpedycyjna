@@ -33,7 +33,8 @@ namespace FirmaSpedycyjna
         {
             SqlConnection sql = new SqlConnection(sqlConString);
             sql.Open();
-            string showTrucks = "select Trucks.Truck, LicensePlate, CONCAT(FirstName, ' ', LastName) as Driver from Trucks join Drivers on Trucks.DriverID = Drivers.DriverID join Employees on Drivers.EmployeeID = Employees.EmployeeID";
+            string showTrucks = "select concat(Trucks.Truck,' ',': ', Trucks.LicensePlate) as Truck,concat(TypeName,' ', ': ',Trailers.LicensePlate) as [Connected Trailer], CONCAT(FirstName, ' ', LastName) as Driver from Trucks join Drivers on Trucks.DriverID = Drivers.DriverID join Employees on Drivers.EmployeeID = Employees.EmployeeID join Trailers on Trucks.TruckID = Trailers.TruckID join TrailerType on Trailers.TypeID = TrailerType.TypeID";
+
             using (SqlCommand showT = new SqlCommand())
             {
                 SqlCommand show = new SqlCommand(showTrucks, sql);

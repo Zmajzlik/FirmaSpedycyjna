@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:FirmaSpedycyjna"
              mc:Ignorable="d" Height="323.5" Width="844.5">
     <Grid Name="GridDrivers" HorizontalAlignment="Right" Height="340" VerticalAlignment="Bottom" Width="844" Margin="0,0,0,-18">
-        <Button Name="ButtonBack" Click="BtnBack" Content="Back" HorizontalAlignment="Left" Margin="370,-3,-1,318" VerticalAlignment="Bottom" Width="75" Height="22"/>
-        <DataGrid IsReadOnly="True" Name="drvGrd" HorizontalAlignment="Left" Height="308" Margin="0,22,0,0" VerticalAlignment="Top" Width="445" CanUserResizeColumns="False" CanUserResizeRows="False"/>
+        <Button Name="ButtonBack" Click="BtnBack" Content="Back" HorizontalAlignment="Left" Margin="379,-3,0,318" VerticalAlignment="Bottom" Width="75" Height="22"/>
+        <DataGrid IsReadOnly="True" Name="drvGrd" HorizontalAlignment="Left" Height="Auto" Margin="0,22,0,0" VerticalAlignment="Top" Width="Auto" CanUserResizeColumns="False" CanUserResizeRows="False"/>
         <Button Name="AddButton" Click="BtnAdd" Content="Add" HorizontalAlignment="Left" Margin="0,-3,0,318" VerticalAlignment="Bottom" Width="75" Height="22"/>
         <Button Name="RemoveButton" Click="BtnRemove" Content="Remove" HorizontalAlignment="Left" Margin="75,-3,0,318" Width="75"/>
         <Grid Name="GridForAdding" HorizontalAlignment="Left" Height="298" Margin="10,32,-1,0" VerticalAlignment="Top" Width="805"/>

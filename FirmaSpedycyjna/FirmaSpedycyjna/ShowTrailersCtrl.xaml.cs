@@ -33,17 +33,16 @@ namespace FirmaSpedycyjna
         private void Back()
         {
             TrailerBox.Visibility = Visibility.Hidden;
-            TrailerBoxTxt.Visibility = Visibility.Hidden;
+            TrailerGrid.Visibility = Visibility.Hidden;
             BackBtn.Visibility = Visibility.Hidden;
         }
        private void FillCombo()
         {
-            string getTrailer = "select CONCAT('(',TrailerID,')', ' ',TypeName,' ') as Trailer, Payload from TrailerType join Trailers on Trailers.TypeID = TrailerType.TypeID";
             SqlConnection sql = new SqlConnection(sqlConString);
             sql.Open();
             SqlCommand cmd = sql.CreateCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "SELECT CONCAT('(',TypeID,')',' ', TypeName) as Trailer from TrailerType";
+            cmd.CommandText = "select CONCAT('(',TrailerType.TypeID,')',' ', TypeName) as Trailer, Payload, LicensePlate from TrailerType join Trailers on Trailers.TypeID = TrailerType.TypeID";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -52,6 +51,17 @@ namespace FirmaSpedycyjna
             {
                 TrailerBox.Items.Add(dr["Trailer"].ToString());
             }
+            TrailerBox.SelectionChanged += (o, a) =>
+            {
+                var selectedTrailerType = new
+                {
+                    Trailer = dt.Rows[TrailerBox.SelectedIndex][0].ToString(),
+                    Payload = dt.Rows[TrailerBox.SelectedIndex][1].ToString(),
+                    LicensePlate = dt.Rows[TrailerBox.SelectedIndex][2].ToString(),
+                };
+               
+                TrailerGrid.ItemsSource = new[] { selectedTrailerType };
+            };
         }
         private void BtnBackClick(object sender, RoutedEventArgs e)
         {

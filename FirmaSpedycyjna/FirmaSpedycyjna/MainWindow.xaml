@@ -6,7 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirmaSpedycyjna"
         mc:Ignorable="d"
-        Title="SpedMax - control your shipping business" Height="720" Width="1280" WindowStartupLocation="CenterScreen" >
+        Title="SpedMax - control your shipping business" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="pictures/bg.png" />
+    </Window.Background>
     <Grid Name="LoginHead" HorizontalAlignment="Left" Height="202" Margin="812,216,0,0" VerticalAlignment="Top" Width="284">
         <Button FontWeight="SemiBold" FontSize="24" Content="Login" HorizontalAlignment="Right" Margin="0,87,35,0" VerticalAlignment="Top" Width="100" Height="45" Click="LoginBtn" RenderTransformOrigin="0.505,0.382"/>
         <Label FontWeight="Bold" FontSize="18" Content="Login:" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Height="33" Width="85"/>

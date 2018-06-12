@@ -22,14 +22,10 @@ namespace FirmaSpedycyjna
     /// </summary>
     public partial class Window2 : MetroWindow
     {
-        string sqlConString = @"Data Source=den1.mssql3.gear.host;Initial Catalog=spedycjaath;User ID=spedycjaath;Password=Qd6QQ~!3f4iN";
         public Window2()
         {
-            ImageBrush myBrush = new ImageBrush();
-            myBrush.ImageSource =
-                new BitmapImage(new Uri(@"C:\Users\Artur\Desktop\FirmaSpedycyjna\FirmaSpedycyjna\bg.png", UriKind.Absolute));
-            this.Background = myBrush;
             InitializeComponent();
+            AddButton.Visibility = Visibility.Hidden;
 
         }
         private void Invoices()
